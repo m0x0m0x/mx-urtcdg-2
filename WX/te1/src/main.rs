@@ -12,6 +12,6 @@ mod utilz;
 fn main() {
     clear_console();
     pswg("Whootey".to_string());
-    println!("Hello, world!");
     header("Wilka");
+    println!("Hello, world!");
 }
