@@ -5,13 +5,11 @@
 // Imports 
  
  mod utilz;
- use utilz::{clear_console}
+ use utilz::{clear_console,header};
 
-
-
- 
 // Main Logic
 
 fn main() {
     println!("Hello, world!");
+    header("Wilka");
 }
