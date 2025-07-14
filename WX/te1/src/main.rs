@@ -1,17 +1,17 @@
-//
-//Main Entry point of the Application
-//
+// ------------------------------------
+// Main Entry point of the Application
+// -----------------------------------
 
-// Imports 
- 
- mod utilz;
- use utilz::{clear_console,header,pswg};
+// Imports
+
+mod utilz;
+use utilz::{clear_console, header, pswg};
 
 // Main Logic
 
 fn main() {
-    pswg("Whootey".to_string());
     clear_console();
+    pswg("Whootey".to_string());
     println!("Hello, world!");
     header("Wilka");
 }
