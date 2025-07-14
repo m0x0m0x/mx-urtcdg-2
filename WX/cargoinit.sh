@@ -63,4 +63,5 @@ cargo_remove_target() {
 }
 
 # Execution
-cargo_remove_target
+cargo_new
+# cargo_remove_target
