@@ -5,8 +5,6 @@
 // Imports
 
 use utilz::{clear_console, header, pswg};
-
-
 mod utilz;
 
 // Main Logic
