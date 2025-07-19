@@ -25,11 +25,12 @@ fn s1() {
 
 // 7 - Representing data with structs
 
+// Deck struct for s2
 struct Deck {
     cards: Vec<String>,
 }
 
 fn s2() {
-    let t1 = "r#7: Representing data with structs";
+    let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
 }
