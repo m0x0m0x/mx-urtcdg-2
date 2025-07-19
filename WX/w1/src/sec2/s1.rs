@@ -36,4 +36,6 @@ fn s2() {
 
     // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
+
+    println!("Deck : {:?}", deck)
 }
