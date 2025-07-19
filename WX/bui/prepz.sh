@@ -38,7 +38,8 @@ prep1() {
 # Getting the built from GH 
 get_filez() {
     hea1 "Getting the files from release"
-    DEST="https://github.com/m0x0m0x/mx-urtcdg-2/releases/download/v2.0.0/pantismyl"
+    VER="v3.0.0"
+    DEST="https://github.com/m0x0m0x/mx-urtcdg-2/releases/download/${VER}/pantismyl"
     co1="wget ${DEST}"
     echo -e "${GREEN} Executing: ${co1} " 
     eval "$co1"
