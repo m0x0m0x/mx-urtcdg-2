@@ -1,5 +1,6 @@
 #!/usr/bin/bash
-# This bash srcript is for installing the KL docker image here
+# Installing a lightweight CLI reverse engineering tool 
+# 
 clear
 
 # Colors
@@ -62,6 +63,18 @@ cargo_remove_target() {
     eval "$co1"
 }
 
+# Rizin Install 
+
+rizin_install() {
+    hea1 "Rizin Reverse Engineering Toolkit"
+    echo 'deb http://download.opensuse.org/repositories/home:/RizinOrg/Debian_Unstable/ /' | sudo tee /etc/apt/sources.list.d/home:RizinOrg.list
+    curl -fsSL https://download.opensuse.org/repositories/home:RizinOrg/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_RizinOrg.gpg > /dev/null
+    sudo apt update
+    sudo apt install rizin
+    rizin --help
+}
+
 # Execution
-cargo_new
+# cargo_new
 # cargo_remove_target
+rizin_install
