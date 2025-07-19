@@ -6,3 +6,6 @@ edition = "2024"
 [dependencies]
 cfonts = "1.2.0"
 yansi = "1.0.1"
+
+[[bin]]
+name = "pantysmell"
