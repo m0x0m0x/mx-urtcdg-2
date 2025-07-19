@@ -3,7 +3,8 @@
 // -------------------------------------------------
 
 // ---Imports ---
-pub mod tez;
+mod tez;
+mod utilz;
 
 use tez::main_tez;
 

@@ -3,7 +3,7 @@
 // ----------------------------------------------
 
 // --- Imports ---
-use crate::utilz::{clear_console, header, pswg};
+use crate::utilz::{clear_console, pswg};
 
 // -- Main function ---
 
