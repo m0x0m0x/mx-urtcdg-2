@@ -2,4 +2,4 @@
 
 # w1
 
-1. This will have the actual work from the course 
+1. This will have the actual work from the course.
