@@ -46,7 +46,7 @@ fn s2() {
 
     for suit in suits {
         for value in values {
-            let card = format!("{} of {}", value.yellow(), suit.green());
+            let card = format!("{} of {}", value.red(), suit.green());
             println!("{}", card);
 
             // Add card to deck
