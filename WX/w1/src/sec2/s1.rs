@@ -39,8 +39,17 @@ fn s2() {
     pswg(t1.to_string());
 
     // List of suits
-    let suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
-    let values = ["Ace", "Jack", "Queen", "King"];
+    let suits = ["Hearts", "Diamonds"];
+    let values = ["Ace", "Jack"];
+
+    let cards = vec1[];
+
+    for suit in suits {
+        for value in values {
+            let card = format!("{} of {}", value, suit);
+            println!("{}", card);
+        }
+    }
 
     // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
