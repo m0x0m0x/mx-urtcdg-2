@@ -42,17 +42,12 @@ impl Deck {
 
         for suit in suits {
             for value in values {
-                let card = format!("{} of {}", value.red(), suit.green());
-                println!("{}", card);
-
-                // Add card to deck
-                cards.push(card);
+                cards.push(format!("{} of {}", value.red(), suit.green()));
             }
         }
 
         // Instancing the Deck Struct
-        let deck = Deck { cards: vec![] };
-        return deck;
+        Deck { cards }
     }
 }
 
@@ -61,7 +56,9 @@ fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
 
+    // Create a new deck
     let deck = Deck::new();
-
-    println!("{}: {:#?}", "Deck".blue(), deck.green())
+    for card in &deck.cards {
+        println!("{}", card);
+    }
 }
