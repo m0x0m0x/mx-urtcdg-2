@@ -1,5 +1,13 @@
-// Main entry point of the app
+// -------------------------------------------------
+// Main Entry point
+// -------------------------------------------------
 
+// ---Imports ---
+mod tez;
+
+use tez::main_tez;
+
+// -- Exec----
 fn main() {
-    println!("Hello, world!");
+    main_tez();
 }
