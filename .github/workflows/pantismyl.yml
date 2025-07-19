@@ -27,12 +27,12 @@ jobs:
           components: rustfmt, clippy
 
       - name: Build Release
-        working-directory: ./buildz # Build inside your specific folder
+        working-directory: ./buildz/w1 # Build inside your specific folder
         run: cargo build --release
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: linux-binary
-          path: buildz/target/release/pantysmyl
+          path: buildz/w1/target/release/pantysmyl
           if-no-files-found: error
