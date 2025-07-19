@@ -1,5 +1,6 @@
 1. [w1](#w1)
 2. [src dirs](#src-dirs)
+3. [General Notes](#general-notes)
 
 # w1
 
@@ -12,3 +13,5 @@
 |             Dir             |        What        |
 | :-------------------------: | :----------------: |
 | [`src/utilz`](./src/utilz/) | Various utils here |
+
+# General Notes
