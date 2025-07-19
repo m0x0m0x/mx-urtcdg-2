@@ -34,5 +34,6 @@ fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
 
+    // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
 }
