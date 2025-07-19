@@ -41,3 +41,11 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.next_tag }}
           files: buildz/w1/target/release/pantismyl
+#####################################################
+#Version Bumping:
+#
+# Major: Triggered if commit message contains [major].
+#
+# Minor: Triggered if commit message contains [minor].
+#
+#Patch: Default increment (e.g., v1.0.0 → v1.0.1).
