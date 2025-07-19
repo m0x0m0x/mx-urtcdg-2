@@ -1,0 +1,38 @@
+name: Build Rust for Linux (Conditional)
+
+on:
+  push:
+    branches: ["w1"] # Replace with your branch name
+    paths: ["your-folder-name/**"] # Replace with your folder path
+  pull_request:
+    branches: ["your-branch-name"]
+    paths: ["your-folder-name/**"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Release Binary
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+          components: rustfmt, clippy
+
+      - name: Build Release
+        working-directory: ./your-folder-name # Build inside your specific folder
+        run: cargo build --release
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-binary
+          path: your-folder-name/target/release/your-project-name
+          if-no-files-found: error
