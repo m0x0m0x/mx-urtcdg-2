@@ -43,7 +43,7 @@ prep1() {
     co2="cp -r ${TARGET} ."
     eval "$co2"
     git add .
-    git commit -m "👙 [minor]"
+    git commit -m "👙 [major]"
     git push
 }
 
