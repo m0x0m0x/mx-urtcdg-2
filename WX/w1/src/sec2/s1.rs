@@ -26,6 +26,7 @@ fn s1() {
 // 7 - Representing data with structs
 
 // Deck struct for s2
+#[derive(Debug)]
 struct Deck {
     cards: Vec<String>,
 }
@@ -37,5 +38,5 @@ fn s2() {
     // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
 
-    println!("Deck : {:?}", deck)
+    println!("Deck : {:#?}", deck)
 }
