@@ -9,7 +9,7 @@ use crate::utilz::{clear_console, header, pswg};
 
 pub fn main_tez() {
     clear_console();
-    t1 = "Tezt Caret Print";
+    let t1 = "Tezt Caret Print";
     pswg(t1.to_string());
 }
 
