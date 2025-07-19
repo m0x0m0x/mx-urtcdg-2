@@ -33,4 +33,6 @@ struct Deck {
 fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
+
+    let deck = Deck { cards: vec![] };
 }
