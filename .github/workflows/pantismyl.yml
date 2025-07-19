@@ -45,10 +45,17 @@ jobs:
 
       - name: Bump Version
         id: bump
-        uses: cbrgm/semver-bump-action@main # Dedicated SemVer action
+        uses: cbrgm/semver-bump-action@main
         with:
           current-version: ${{ steps.current_version.outputs.current_version }}
           bump-level: ${{ steps.semver.outputs.bump_level }}
+
+      - name: Create Tag
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git tag ${{ steps.bump.outputs.new_version }}
+          git push origin ${{ steps.bump.outputs.new_version }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
