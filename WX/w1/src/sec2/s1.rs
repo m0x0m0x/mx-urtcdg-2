@@ -5,8 +5,10 @@
 
 // --- attributes ---
 #![allow(dead_code)]
+
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
+use yansi::Paint;
 
 // --- main ---
 pub fn s1_main() {
@@ -38,5 +40,5 @@ fn s2() {
     // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
 
-    println!("Deck : {:#?}", deck)
+    println!("Deck : {:#?}", deck.green())
 }
