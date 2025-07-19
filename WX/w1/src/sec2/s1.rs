@@ -30,6 +30,6 @@ struct Deck {
 }
 
 fn s2() {
-    let t1 = "7: Representing data with structs";
+    let t1 = "r#7: Representing data with structs";
     pswg(t1.to_string());
 }
