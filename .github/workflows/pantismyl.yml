@@ -3,10 +3,10 @@ name: Build Rust for Linux (Conditional)
 on:
   push:
     branches: ["w1"] # Replace with your branch name
-    paths: ["your-folder-name/**"] # Replace with your folder path
+    paths: ["buildz/**"] # Replace with your folder path
   pull_request:
-    branches: ["your-branch-name"]
-    paths: ["your-folder-name/**"]
+    branches: ["w1"]
+    paths: ["buildz/**"]
   workflow_dispatch:
 
 jobs:
