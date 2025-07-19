@@ -4,12 +4,11 @@
 
 // ---Imports ---
 mod sec2;
-mod tez;
 mod utilz;
 
-use tez::main_tez;
+use sec2::s1::s1_main;
 
 // -- Exec----
 fn main() {
-    main_tez();
+    s1_main();
 }
