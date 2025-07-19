@@ -14,6 +14,7 @@ pub fn s1_main() {
 
 // --- Sub ---
 
+// Test s1 sub function
 fn s1() {
     // Function header
     let t1 = "src/sec2/s1 main";
