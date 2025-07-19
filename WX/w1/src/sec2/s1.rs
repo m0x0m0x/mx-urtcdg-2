@@ -42,12 +42,15 @@ fn s2() {
     let suits = ["Hearts", "Diamonds"];
     let values = ["Ace", "Jack"];
 
-    let cards = vec1[];
+    let mut cards = vec![];
 
     for suit in suits {
         for value in values {
-            let card = format!("{} of {}", value, suit);
+            let card = format!("{} of {}", value.blue(), suit.green());
             println!("{}", card);
+
+            // Add card to deck
+            cards.push(card);
         }
     }
 
