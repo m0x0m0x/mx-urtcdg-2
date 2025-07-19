@@ -1,38 +1,66 @@
-name: Build Rust for Linux (Conditional)
+name: Build and Release Rust (SemVer Auto)
 
 on:
   push:
-    branches: ["w1"] # Replace with your branch name
-    paths: ["buildz/**"] # Replace with your folder path
-  pull_request:
     branches: ["w1"]
     paths: ["buildz/**"]
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build Release Binary
+  build-and-release:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (fetch tags)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to fetch Git tags
 
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
-          profile: minimal
           toolchain: stable
           override: true
-          components: rustfmt, clippy
 
       - name: Build Release
-        working-directory: ./buildz/w1 # Build inside your specific folder
+        working-directory: ./buildz/w1
         run: cargo build --release
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Determine Next Version
+        id: version
+        run: |
+          # Fetch latest tag (or default to v0.0.0)
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          echo "Latest tag: $LATEST_TAG"
+
+          # Extract version numbers (strip 'v' prefix)
+          VERSION=${LATEST_TAG#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+
+          # Increment based on commit messages (customize logic as needed)
+          if [[ "${{ github.event.head_commit.message }}" == *"[major]"* ]]; then
+            MAJOR=$((MAJOR + 1))
+            MINOR=0
+            PATCH=0
+          elif [[ "${{ github.event.head_commit.message }}" == *"[minor]"* ]]; then
+            MINOR=$((MINOR + 1))
+            PATCH=0
+          else
+            PATCH=$((PATCH + 1))
+          fi
+
+          NEXT_TAG="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "Next tag: $NEXT_TAG"
+
+          # Set outputs for later steps
+          echo "next_tag=${NEXT_TAG}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: linux-binary
-          path: buildz/w1/target/release/pantismyl
-          if-no-files-found: error
+          tag_name: ${{ steps.version.outputs.next_tag }}
+          name: "Release ${{ steps.version.outputs.next_tag }}"
+          body: "Automated SemVer release for Linux binary."
+          files: |
+            buildz/w1/target/release/pantismyl
+          draft: false
+          prerelease: false
