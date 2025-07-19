@@ -31,8 +31,9 @@ prep1() {
     echo -e "${YELLOW}Copying TARGET to buildz...${NC}"
     co2="cp -r ${TARGET} ."
     eval "$co2"
-    co3="git add . && git commit -m "👙" && git push"
-    eval "$co3"
+    git add .
+    git commit -m "👙 [minor]"
+    git push
 }
 
 # Execute 
