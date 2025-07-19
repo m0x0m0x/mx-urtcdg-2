@@ -3,7 +3,7 @@
 // ----------------------------------------------
 
 // --- Imports ---
-use crate::utilz::{clear_console, pswg};
+use crate::utilz::{clear_console, header, pswg};
 
 // -- Main function ---
 
@@ -11,6 +11,7 @@ pub fn main_tez() {
     clear_console();
     let t1 = "Tezt Caret Print";
     pswg(t1.to_string());
+    header("Tezt Caret Print");
 }
 
 // -- Subs

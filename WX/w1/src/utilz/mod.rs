@@ -19,7 +19,7 @@ pub fn pswg(text: String) {
 
     say(Options {
         text,
-        font: Fonts::FontBlock, // Change the style here
+        font: Fonts::FontConsole, // Change the style here
         gradient: synth,
         independent_gradient: false,
         transition_gradient: true,
