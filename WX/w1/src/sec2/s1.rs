@@ -3,8 +3,8 @@
 // s1.rs = Section 1 of the work
 //-----------------------------------------
 
-//
-
+// --- attributes ---
+#![allow(dead_code)]
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
 
