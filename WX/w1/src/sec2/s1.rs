@@ -9,8 +9,13 @@ use crate::utilz::{clear_console, pswg};
 // --- main ---
 pub fn s1_main() {
     clear_console();
-    let t1 = "src/sec2 main";
-    pswg(t1.to_string())
+    s1();
 }
 
 // --- Sub ---
+
+fn s1() {
+    // Function header
+    let t1 = "src/sec2/s1 main";
+    pswg(t1.to_string())
+}
