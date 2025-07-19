@@ -63,5 +63,5 @@ cargo_remove_target() {
 }
 
 # Execution
-cargo_news
+# cargo_news
 # cargo_remove_target
