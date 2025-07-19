@@ -33,7 +33,7 @@ struct Deck {
     cards: Vec<String>,
 }
 
-#[allow(dead_code)]
+// #[allow(unused_variables)]
 fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
@@ -44,11 +44,5 @@ fn s2() {
 
     // Instancing the Deck Struct
     let deck = Deck { cards: vec![] };
-    println!(
-        "
-Brint
-Da
-Deck"
-    );
     println!("{}: {:#?}", "Deck".blue(), deck.green())
 }
