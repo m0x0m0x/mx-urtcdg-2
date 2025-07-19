@@ -32,29 +32,36 @@ fn s1() {
 struct Deck {
     cards: Vec<String>,
 }
+impl Deck {
+    fn new() -> Self {
+        // List of suits
+        let suits = ["Hearts ♥️", "Diamonds ♦️"];
+        let values = ["Ace", "Jack"];
+
+        let mut cards = vec![];
+
+        for suit in suits {
+            for value in values {
+                let card = format!("{} of {}", value.red(), suit.green());
+                println!("{}", card);
+
+                // Add card to deck
+                cards.push(card);
+            }
+        }
+
+        // Instancing the Deck Struct
+        let deck = Deck { cards: vec![] };
+        return deck;
+    }
+}
 
 // #[allow(unused_variables)]
 fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
 
-    // List of suits
-    let suits = ["Hearts", "Diamonds"];
-    let values = ["Ace", "Jack"];
+    let deck = Deck::new();
 
-    let mut cards = vec![];
-
-    for suit in suits {
-        for value in values {
-            let card = format!("{} of {}", value.red(), suit.green());
-            println!("{}", card);
-
-            // Add card to deck
-            cards.push(card);
-        }
-    }
-
-    // Instancing the Deck Struct
-    let deck = Deck { cards: vec![] };
     println!("{}: {:#?}", "Deck".blue(), deck.green())
 }
