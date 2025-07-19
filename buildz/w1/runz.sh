@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Prep for release 
+# This bash srcript is for installing the KL docker image here
 clear
 
 # Colors
@@ -20,20 +20,12 @@ hea1() {
     echo -e "${CYAN}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
 }
 
-# Release prep 
-prep1() {
-    clear
-    hea1 "Prepare for release"
-    TARGET="../WX/w1"
-    echo -e "${YELLOW}Cleaning up build directories...${NC}"
-    co1="rm -rf ${TARGET}/target/"
-    eval "$co1"
-    echo -e "${YELLOW}Copying TARGET to buildz...${NC}"
-    co2="cp -r ${TARGET} ."
-    eval "$co2"
-    co3="git add . && git commit -m "👙" && git push"
-    eval "$co3"
+# Command to run
+bacon_run() {
+    hea1 "Running bacon"
+    CO1="bacon run -- -q"
+    eval "$CO1"
 }
 
-# Execute 
-prep1
+# Exeution
+bacon_run
