@@ -20,6 +20,17 @@ hea1() {
     echo -e "${CYAN}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${NC}"
 }
 
+#####################################################
+#Version Bumping:
+#
+# Major: Triggered if commit message contains [major].
+#
+# Minor: Triggered if commit message contains [minor].
+#
+#Patch: Default increment (e.g., v1.0.0 → v1.0.1).
+
+
+
 # Release prep 
 prep1() {
     clear

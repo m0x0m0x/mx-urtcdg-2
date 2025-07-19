@@ -11,41 +11,51 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (with tags)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Required for git tag history
 
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+          components: rustfmt, clippy
 
       - name: Build Release
         working-directory: ./buildz/w1
         run: cargo build --release
 
-      - name: Determine Next Version
-        id: version
+      - name: Determine SemVer Bump Level
+        id: semver
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" == *"[major]"* ]]; then
+            echo "bump_level=major" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.head_commit.message }}" == *"[minor]"* ]]; then
+            echo "bump_level=minor" >> $GITHUB_OUTPUT
+          else
+            echo "bump_level=patch" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get Current Version
+        id: current_version
         run: |
           LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
-          VERSION=${LATEST_TAG#v}
-          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-          NEXT_TAG="v${MAJOR}.${MINOR}.$((PATCH + 1))"
-          echo "next_tag=${NEXT_TAG}" >> $GITHUB_OUTPUT
+          echo "current_version=${LATEST_TAG}" >> $GITHUB_OUTPUT
+
+      - name: Bump Version
+        id: bump
+        uses: cbrgm/semver-bump-action@main # Dedicated SemVer action
+        with:
+          current-version: ${{ steps.current_version.outputs.current_version }}
+          bump-level: ${{ steps.semver.outputs.bump_level }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.version.outputs.next_tag }}
+          tag_name: ${{ steps.bump.outputs.new_version }}
+          name: "Release ${{ steps.bump.outputs.new_version }}"
           files: buildz/w1/target/release/pantismyl
-#####################################################
-#Version Bumping:
-#
-# Major: Triggered if commit message contains [major].
-#
-# Minor: Triggered if commit message contains [minor].
-#
-#Patch: Default increment (e.g., v1.0.0 → v1.0.1).
+          generate_release_notes: true
