@@ -55,7 +55,10 @@ impl Deck {
     }
 
     // shuffling the deck
-    fn shuffle(&mut self) {}
+    fn shuffle(&mut self) {
+        let mut rng = thread_rng();
+        self.cards.shuffle(&mut rng);
+    }
 }
 
 // #[allow(unused_variables)]
