@@ -64,7 +64,7 @@ fn s2() {
     pswg(t1.to_string());
 
     // Generate a new dec
-    let deck = Deck::new();
+    let mut deck = Deck::new();
 
     // Shufle the deck
     deck.shuffle();
