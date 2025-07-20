@@ -5,6 +5,7 @@ edition = "2024"
 authors = ["BootySmellers"]
 
 [dependencies]
+boxy-cli = "2.0.0"
 cfonts = "1.2.0"
 yansi = "1.0.1"
 

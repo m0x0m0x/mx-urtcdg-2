@@ -9,11 +9,13 @@ use crate::utilz::{clear_console, header, pswg};
 
 pub fn main_tez() {
     clear_console();
-    let t1 = "Tezt Caret Print";
-    pswg(t1.to_string());
-    header("Tezt Caret Print");
+    boxy1()
 }
 
 // -- Subs
 
 // Testing out boxy-clis
+fn boxy1() {
+    let t1 = "Boxy Test 1";
+    pswg(t1.to_string())
+}
