@@ -81,23 +81,19 @@ fn s2_boxy() {
 
     let deck = Deck::new();
 
-    // Concatenate all cards into one string (with a newline between each card)
-    let combined_cards = deck.cards.join("\n");
-
-    // Create a single box for all the cards
+    // Create a single box with proper line handling
     let mut boxy = BoxyBuilder::default()
-        .box_type(BoxType::Single) // Choose your border style (Simple, Double, etc.)
-        .color("#32CD32") // Border color
-        .padding(BoxPad::uniform(1), BoxPad::uniform(1)) // Padding around the text
-        .align(BoxAlign::Left) // Center the content inside the box
-        .width(40); // Set a fixed width for the box
+        .box_type(BoxType::Single)
+        .color("#32CD32")
+        .padding(BoxPad::uniform(1), BoxPad::uniform(1))
+        .align(BoxAlign::Left)
+        .width(30);
 
-    // Add the combined string of cards as a segment
-    boxy = boxy.add_segment(&combined_cards, "#FFFFFF", BoxAlign::Left);
+    // Add each card as a separate segment
+    for card in &deck.cards {
+        boxy = boxy.add_segment(card, "#FFFFFF", BoxAlign::Left);
+    }
 
-    // Build the box
     let mut boxy = boxy.build();
-
-    // Display the box with all cards inside
     boxy.display();
 }
