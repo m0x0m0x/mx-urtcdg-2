@@ -14,7 +14,7 @@ use yansi::Paint;
 // --- main ---
 pub fn s1_main() {
     clear_console();
-    s2_boxy();
+    s2();
 }
 
 // --- Sub ---
@@ -73,6 +73,7 @@ fn s2() {
 }
 
 // This is like function s2 but with boxy
+// Output is not that good. Abandon
 fn s2_boxy() {
     let t1 = "Cards printed inside box";
     pswg(t1.to_string());
@@ -87,7 +88,7 @@ fn s2_boxy() {
         .box_type(BoxType::Single) // Choose your border style (Simple, Double, etc.)
         .color("#32CD32") // Border color
         .padding(BoxPad::uniform(1), BoxPad::uniform(1)) // Padding around the text
-        .align(BoxAlign::Center) // Center the content inside the box
+        .align(BoxAlign::Left) // Center the content inside the box
         .width(40); // Set a fixed width for the box
 
     // Add the combined string of cards as a segment
