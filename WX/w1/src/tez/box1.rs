@@ -35,3 +35,5 @@ fn boxy1() {
         .build();
     my_box.display();
 }
+
+// Box test with information
