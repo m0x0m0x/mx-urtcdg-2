@@ -20,6 +20,6 @@
 # Specific Crates Being used
 
 1. Interesting crates being experimente with
-2. Source is - [`lib.rs`]()
+2. Source is - [`lib.rs`](https://lib.rs/)
 
 # General Notes
