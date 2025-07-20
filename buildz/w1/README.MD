@@ -1,6 +1,7 @@
 1. [w1](#w1)
 2. [src dirs](#src-dirs)
-3. [General Notes](#general-notes)
+3. [Specific Crates Being used](#specific-crates-being-used)
+4. [General Notes](#general-notes)
 
 # w1
 
@@ -15,5 +16,14 @@
 | [`src/utilz`](./src/utilz/) | Various utils here |
 |   [`src/tez`](./src/tez/)   |       Tests        |
 |  [`src/sec2`](./src/sec2/)  |     Sec2 Work      |
+
+# Specific Crates Being used
+
+1. Interesting crates being experimente with
+2. Source is - [`lib.rs`](https://lib.rs/)
+
+|                    Crate                     |       Info       |
+| :------------------------------------------: | :--------------: |
+| [`boxy-cli`](https://lib.rs/crates/boxy-cli) | Draw ascii boxes |
 
 # General Notes
