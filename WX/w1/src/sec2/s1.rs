@@ -81,18 +81,28 @@ fn s2_boxy() {
 
     let deck = Deck::new();
 
-    // Create a single box with all cards
+    // First calculate the maximum width needed
+    let max_width = deck
+        .cards
+        .iter()
+        .map(|c| c.chars().count()) // Count characters (not bytes)
+        .max()
+        .unwrap_or(20)
+        + 4; // Add padding
+
+    // Create the box builder
     let mut boxy = BoxyBuilder::default()
         .box_type(BoxType::Single)
         .color("#32CD32")
         .padding(BoxPad::uniform(1), BoxPad::uniform(1))
         .align(BoxAlign::Left)
-        // Calculate width based on longest card string + padding
-        .width(deck.cards.iter().map(|c| c.len()).max().unwrap_or(20) + 4);
+        .width(max_width);
 
-    // Add all cards as one segment with newlines
-    let all_cards = deck.cards.join("\n");
-    boxy = boxy.add_segment(&all_cards, "#FFFFFF", BoxAlign::Left);
+    // Add each card as its own line
+    for card in &deck.cards {
+        boxy = boxy.add_segment(card, "#FFFFFF", BoxAlign::Left);
+        boxy = boxy.add_segment("\n", "#FFFFFF", BoxAlign::Left);
+    }
 
     let mut boxy = boxy.build();
     boxy.display();
