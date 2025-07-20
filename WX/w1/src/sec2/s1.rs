@@ -9,7 +9,7 @@
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
 use boxy_cli::prelude::*;
-use rand::{seq::SliceRandom, thread_rng};
+use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
 
 // --- main ---
@@ -56,7 +56,7 @@ impl Deck {
 
     // shuffling the deck
     fn shuffle(&mut self) {
-        let mut rng = thread_rng();
+        let mut rng = rng();
         self.cards.shuffle(&mut rng);
     }
 }
