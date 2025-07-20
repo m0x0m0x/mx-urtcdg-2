@@ -56,7 +56,7 @@ fn boxy2() {
         )
         .align(BoxAlign::Left) // Center the box in the terminal
         .add_segment("Variables Test", "#ffffff", BoxAlign::Center)
-        .add_segment("Another section", "#663399", BoxAlign::Left)
+        .add_segment("Printing vector", "#663399", BoxAlign::Left)
         .add_line("This is a new line.", "#32CD32")
         .width(40) // Set fixed width
         .build();
