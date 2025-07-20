@@ -15,7 +15,7 @@ pub fn main_tez() {
 
 // -- Subs
 
-// Testing out boxy-clis
+// Testing out boxy-
 fn boxy1() {
     let t1 = "Boxy Test 1";
     pswg(t1.to_string());
@@ -27,11 +27,11 @@ fn boxy1() {
             BoxPad::uniform(1),            // External padding
             BoxPad::from_tldr(2, 2, 1, 1), // Internal padding
         )
-        .align(BoxAlign::Center) // Center the box in the terminal
+        .align(BoxAlign::Left) // Center the box in the terminal
         .add_segment("Hello, Boxy!", "#ffffff", BoxAlign::Center)
         .add_line("This is a new line.", "#32CD32")
         .add_segment("Another section", "#663399", BoxAlign::Left)
-        .width(50) // Set fixed width
+        .width(40) // Set fixed width
         .build();
     my_box.display();
 }
