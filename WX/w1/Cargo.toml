@@ -2,6 +2,7 @@
 name = "w1"
 version = "0.1.0"
 edition = "2024"
+authors = ["BootySmellers"]
 
 [dependencies]
 cfonts = "1.2.0"
@@ -10,3 +11,10 @@ yansi = "1.0.1"
 [[bin]]
 name = "pantismyl"
 path = "src/main.rs"
+
+# Optimize for size
+opt-level = "z"   # Optimize for size
+lto = true        # Enable Link Time Optimization
+codegen-units = 1 # Reduce number of codegen units to increase optimization
+panic = "abort"   # Abort on panic to reduce binary size
+strip = true      # Automatically strip symbols from the binary

@@ -13,5 +13,7 @@
 |             Dir             |        What        |
 | :-------------------------: | :----------------: |
 | [`src/utilz`](./src/utilz/) | Various utils here |
+|   [`src/tez`](./src/tez/)   |       Tests        |
+|  [`src/sec2`](./src/sec2/)  |     Sec2 Work      |
 
 # General Notes
