@@ -14,8 +14,8 @@ use yansi::Paint;
 // --- main ---
 pub fn s1_main() {
     clear_console();
-    // s2()
-    s2_boxy();
+    s2()
+    // s2_boxy();
 }
 
 // --- Sub ---
@@ -74,35 +74,25 @@ fn s2() {
 }
 
 // This is like function s2 but with boxy
-// Output is not that good. Abandon
+// Output is not that good. Requires too much tweaking in this case
 fn s2_boxy() {
     let t1 = "Cards printed inside box";
     pswg(t1.to_string());
 
     let deck = Deck::new();
 
-    // First calculate the maximum width needed
-    let max_width = deck
-        .cards
-        .iter()
-        .map(|c| c.chars().count()) // Count characters (not bytes)
-        .max()
-        .unwrap_or(20)
-        + 4; // Add padding
-
-    // Create the box builder
+    // Create a single box with all cards
     let mut boxy = BoxyBuilder::default()
         .box_type(BoxType::Single)
         .color("#32CD32")
         .padding(BoxPad::uniform(1), BoxPad::uniform(1))
         .align(BoxAlign::Left)
-        .width(max_width);
+        // Calculate width based on longest card string + padding
+        .width(deck.cards.iter().map(|c| c.len()).max().unwrap_or(20) + 4);
 
-    // Add each card as its own line
-    for card in &deck.cards {
-        boxy = boxy.add_segment(card, "#FFFFFF", BoxAlign::Left);
-        boxy = boxy.add_segment("\n", "#FFFFFF", BoxAlign::Left);
-    }
+    // Add all cards as one segment with newlines
+    let all_cards = deck.cards.join("\n");
+    boxy = boxy.add_segment(&all_cards, "#FFFFFF", BoxAlign::Left);
 
     let mut boxy = boxy.build();
     boxy.display();
