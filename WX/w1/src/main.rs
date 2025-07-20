@@ -7,10 +7,10 @@ mod sec2;
 mod tez;
 mod utilz;
 
-use sec2::s1::s1_main;
+use sec2::s1::{self, s1_main};
 use tez::box1::main_tez;
 
 // -- Exec----
 fn main() {
-    main_tez();
+    s1_main();
 }
