@@ -22,4 +22,8 @@
 1. Interesting crates being experimente with
 2. Source is - [`lib.rs`](https://lib.rs/)
 
+|                    Crate                     |       Info       |
+| :------------------------------------------: | :--------------: |
+| [`boxy-cli`](https://lib.rs/crates/boxy-cli) | Draw ascii boxes |
+
 # General Notes
