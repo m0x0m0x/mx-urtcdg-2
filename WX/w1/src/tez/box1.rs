@@ -3,7 +3,9 @@
 // ----------------------------------------------
 
 // -- Attributes ---
-#![allow(unused_features)]
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(unused_functions)]
 
 // --- Imports ---
 use crate::utilz::{clear_console, header, pswg};
@@ -43,4 +45,6 @@ fn boxy1() {
 fn boxy2() {
     let t2 = "Boxy Test 2 - with data";
     pswg(t2.to_string());
+
+    let vec1 = vec!["Item 1", "Item 2", "Item 3"];
 }
