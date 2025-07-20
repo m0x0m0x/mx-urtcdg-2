@@ -8,6 +8,7 @@
 
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
+use boxy_cli::prelude::*;
 use yansi::Paint;
 
 // --- main ---
@@ -69,4 +70,29 @@ fn s2() {
     for card in &deck.cards {
         println!("{}", card);
     }
+}
+
+// This is like function s2 but with boxy
+fn s2_boxy() {
+    let t1 = "Cards printed inside box";
+    pswg(t1.to_string());
+
+    // Generate a new dec
+    let deck = Deck::new();
+
+    // Concatenate all cards into one string (with a newline between each card)
+    let combined_cards = deck.cards.join("\n");
+
+    // Create a single box for all the cards
+    let boxy = BoxyBuilder::default()
+        .box_type(BoxType::Simple) // Choose your border style (Simple, Double, etc.)
+        .color("#32CD32") // Border color
+        .padding(BoxPad::uniform(1), BoxPad::uniform(1)) // Padding around the text
+        .align(BoxAlign::Center) // Center the content inside the box
+        .content(&combined_cards) // The combined content for all cards
+        .width(40) // Set a fixed width for the box
+        .build();
+
+    // Display the box with all cards inside
+    boxy.display();
 }
