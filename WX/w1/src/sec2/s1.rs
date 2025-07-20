@@ -33,6 +33,7 @@ struct Deck {
     cards: Vec<String>,
 }
 impl Deck {
+    // Method for making a deck of cards
     fn new() -> Self {
         // List of suits
         let suits = ["Hearts ♥️", "Diamonds ♦️"];
@@ -49,6 +50,8 @@ impl Deck {
         // Instancing the Deck Struct
         Deck { cards }
     }
+
+    fn shuffle(&self) {}
 }
 
 // #[allow(unused_variables)]
@@ -56,8 +59,13 @@ fn s2() {
     let t1 = "7: Representing data with structs";
     pswg(t1.to_string());
 
-    // Create a new deck
+    // Generate a new dec
     let deck = Deck::new();
+
+    // Shufle the deck
+    deck.shuffle();
+
+    // Print the deck with formatting
     for card in &deck.cards {
         println!("{}", card);
     }
