@@ -2,6 +2,9 @@
 // tez/box1.rs - Testing out boxy cli
 // ----------------------------------------------
 
+// -- Attributes ---
+#![allow(unused_features)]
+
 // --- Imports ---
 use crate::utilz::{clear_console, header, pswg};
 use boxy_cli::prelude::*;
@@ -10,7 +13,7 @@ use boxy_cli::prelude::*;
 
 pub fn main_tez() {
     clear_console();
-    boxy1()
+    boxy2()
 }
 
 // -- Subs
@@ -37,3 +40,7 @@ fn boxy1() {
 }
 
 // Box test with information
+fn boxy2() {
+    let t2 = "Boxy Test 2 - with data";
+    pswg(t2.to_string());
+}
