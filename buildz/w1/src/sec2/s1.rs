@@ -9,11 +9,12 @@
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
 use boxy_cli::prelude::*;
+use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
 
 // --- main ---
 pub fn s1_main() {
-    clear_console();
+    // clear_console();
     s2()
     // s2_boxy();
 }
@@ -54,7 +55,10 @@ impl Deck {
     }
 
     // shuffling the deck
-    fn shuffle(&self) {}
+    fn shuffle(&mut self) {
+        let mut rng = rng();
+        self.cards.shuffle(&mut rng);
+    }
 }
 
 // #[allow(unused_variables)]
@@ -63,7 +67,7 @@ fn s2() {
     pswg(t1.to_string());
 
     // Generate a new dec
-    let deck = Deck::new();
+    let mut deck = Deck::new();
 
     // Shufle the deck
     deck.shuffle();
@@ -96,5 +100,5 @@ fn s2_boxy() {
     boxy = boxy.add_segment(&all_cards, "#FFFFFF", BoxAlign::Left);
 
     let mut boxy = boxy.build();
-    boxy.display();
+    boxy.display()
 }

@@ -15,8 +15,4 @@ name = "pantismyl"
 path = "src/main.rs"
 
 # Optimize for size
-opt-level = "z"   # Optimize for size
-lto = true        # Enable Link Time Optimization
-codegen-units = 1 # Reduce number of codegen units to increase optimization
-panic = "abort"   # Abort on panic to reduce binary size
-strip = true      # Automatically strip symbols from the binary
+opt-level = "z" # Optimize for size
