@@ -53,6 +53,7 @@ impl Deck {
         Deck { cards }
     }
 
+    // shuffling the deck
     fn shuffle(&self) {}
 }
 
