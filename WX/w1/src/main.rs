@@ -2,6 +2,10 @@
 // Main Entry point
 // -------------------------------------------------
 
+//--- Attributes ---
+#![allow(dead_code)]
+#![allow(unused_imports)]
+
 // ---Imports ---
 mod sec2;
 mod tez;

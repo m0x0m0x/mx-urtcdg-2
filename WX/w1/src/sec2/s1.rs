@@ -14,7 +14,7 @@ use yansi::Paint;
 
 // --- main ---
 pub fn s1_main() {
-    clear_console();
+    // clear_console();
     s2()
     // s2_boxy();
 }
