@@ -8,7 +8,7 @@ mod tez;
 mod utilz;
 
 use sec2::s1::s1_main;
-use tez::main_tez;
+use tez::box1::main_tez;
 
 // -- Exec----
 fn main() {
