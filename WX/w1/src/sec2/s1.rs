@@ -55,7 +55,7 @@ impl Deck {
     }
 
     // shuffling the deck
-    fn shuffle(&self) {}
+    fn shuffle(&mut self) {}
 }
 
 // #[allow(unused_variables)]
