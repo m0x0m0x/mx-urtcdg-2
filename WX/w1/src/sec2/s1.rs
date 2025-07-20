@@ -96,5 +96,5 @@ fn s2_boxy() {
     boxy = boxy.add_segment(&all_cards, "#FFFFFF", BoxAlign::Left);
 
     let mut boxy = boxy.build();
-    boxy.display();
+    boxy.display()
 }
