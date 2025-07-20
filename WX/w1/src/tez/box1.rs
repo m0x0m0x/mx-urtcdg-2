@@ -5,6 +5,7 @@
 // -- Attributes ---
 #![allow(unused_imports)]
 #![allow(unused_variables)]
+#![allow(dead_code)]
 
 // --- Imports ---
 use crate::utilz::{clear_console, header, pswg};
