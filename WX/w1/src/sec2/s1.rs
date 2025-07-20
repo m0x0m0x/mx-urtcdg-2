@@ -9,6 +9,7 @@
 // --- Imports ---
 use crate::utilz::{clear_console, pswg};
 use boxy_cli::prelude::*;
+use rand::{seq::SliceRandom, thread_rng};
 use yansi::Paint;
 
 // --- main ---
