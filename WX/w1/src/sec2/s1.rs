@@ -78,8 +78,8 @@ impl Deck {
     }
 
     // deal function
-    fn deal(&mut self, num_card: usize) {
-        println!("Dealing {} cards:", num_card);
+    fn deal(&mut self, num_card: usize) -> Vec<String> {
+        self.cards
     }
 }
 
