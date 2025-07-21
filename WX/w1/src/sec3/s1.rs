@@ -11,3 +11,10 @@ use crate::utilz::{clear_console, header, pswg};
 use boxy_cli::prelude::*;
 use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
+
+// --- Main Function---
+pub fn s1_main() {
+    pswg("Section3".to_string());
+}
+
+// --- Sun functions ---

@@ -7,11 +7,12 @@
 #![allow(unused_imports)]
 
 // ---Imports ---
-mod sec2;
+
+mod sec3;
 mod tez;
 mod utilz;
 
-use sec2::s1::{self, s1_main};
+use sec3::s1::s1_main;
 use tez::box1::main_tez;
 
 // -- Exec----
