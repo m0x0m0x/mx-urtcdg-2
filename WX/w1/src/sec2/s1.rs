@@ -7,7 +7,7 @@
 #![allow(dead_code)]
 
 // --- Imports ---
-use crate::utilz::{clear_console, pswg};
+use crate::utilz::{clear_console, header, pswg};
 use boxy_cli::prelude::*;
 use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
@@ -99,10 +99,13 @@ fn s2() {
         println!("{}", card);
     }
 
-    let cardz = deck.deal(5);
-    for card in &deck.cards {
+    header("Dealing Cards");
+
+    let cardz = deck.deal(2);
+    print!("{} dealt cards:\n", cardz.len());
+    for card in &cardz {
         println!("{}", card);
-    
+    }
 
     // After creating the instance of the deck
     // deck.smellpanty();
