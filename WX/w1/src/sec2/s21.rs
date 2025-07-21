@@ -13,7 +13,7 @@ use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
 
 // --- main ---
-pub fn s1_main() {
+pub fn s21_main() {
     // clear_console();
     s2()
     // s2_boxy();

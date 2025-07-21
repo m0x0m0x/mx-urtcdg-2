@@ -14,7 +14,7 @@ use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
 
 // --- Main Function---
-pub fn s1_main() {
+pub fn s31_main() {
     pswg("Section3".to_string());
 }
 

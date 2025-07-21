@@ -12,10 +12,9 @@ mod sec3;
 mod tez;
 mod utilz;
 
-use sec3::s1::s1_main;
-use tez::box1::main_tez;
+use sec3::s31::s31_main as s;
 
 // -- Exec----
 fn main() {
-    s1_main();
+    s();
 }
