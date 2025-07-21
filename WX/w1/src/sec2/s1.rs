@@ -94,7 +94,7 @@ fn s2() {
     }
 
     // After creating the instance of the deck
-    deck.smellpanty();
+    // deck.smellpanty();
 }
 
 // This is like function s2 but with boxy
