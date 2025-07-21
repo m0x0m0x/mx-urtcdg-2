@@ -101,7 +101,7 @@ fn s2() {
 
     header("Dealing Cards");
 
-    let cardz = deck.deal(2);
+    let cardz = deck.deal(3);
     print!("{} dealt cards:\n", cardz.len());
     for card in &cardz {
         println!("{}", card);
