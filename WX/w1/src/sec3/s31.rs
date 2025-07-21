@@ -2,6 +2,9 @@
 // Will write the chapters that are being worled on
 // s1.rs = Section 1 of the work
 // Project Description
+/*
+Section 3 - Focuses on bank project where you had stoppped
+*/
 //-----------------------------------------
 
 // --- attributes ---
