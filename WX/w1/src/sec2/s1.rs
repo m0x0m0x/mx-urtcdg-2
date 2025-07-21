@@ -79,7 +79,7 @@ impl Deck {
 
     // deal function
     fn deal(&mut self, num_card: usize) -> Vec<String> {
-        self.cards
+        self.cards.split_off(self.cards.len() - num_card)
     }
 }
 
