@@ -60,6 +60,7 @@ impl Deck {
         self.cards.shuffle(&mut rng);
     }
 
+    // Test function - using boxy
     fn smellpanty(&mut self) {
         let mut my_box = Boxy::builder()
             .box_type(BoxType::Double) // Set border style
