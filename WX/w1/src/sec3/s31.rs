@@ -1,6 +1,7 @@
 //-----------------------------------------
 // Will write the chapters that are being worled on
 // s1.rs = Section 1 of the work
+// Project Description
 //-----------------------------------------
 
 // --- attributes ---
