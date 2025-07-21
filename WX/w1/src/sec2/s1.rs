@@ -76,6 +76,10 @@ impl Deck {
             .build();
         my_box.display();
     }
+
+    // deal function 
+    fn deal(&mut self, num_card:usize)
+
 }
 
 // #[allow(unused_variables)]
