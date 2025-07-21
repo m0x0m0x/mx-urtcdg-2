@@ -7,7 +7,7 @@
 #![allow(dead_code)]
 
 // --- Imports ---
-use crate::utilz::{clear_console, pswg};
+use crate::utilz::{clear_console, header, pswg};
 use boxy_cli::prelude::*;
 use rand::{rng, seq::SliceRandom};
 use yansi::Paint;
@@ -39,8 +39,8 @@ impl Deck {
     // Method for making a deck of cards
     fn new() -> Self {
         // List of suits
-        let suits = ["Hearts ♥️", "Diamonds ♦️"];
-        let values = ["Ace", "Jack"];
+        let suits = ["Hearts ♥️", "Diamonds ♦️", "Spades ♠️", "Clubs ♣️"];
+        let values = ["Ace", "Jack", "King", "Queen"];
 
         let mut cards = vec![];
 
@@ -59,6 +59,28 @@ impl Deck {
         let mut rng = rng();
         self.cards.shuffle(&mut rng);
     }
+
+    // Test function - using boxy
+    fn smellpanty(&mut self) {
+        let mut my_box = Boxy::builder()
+            .box_type(BoxType::Double) // Set border style
+            .color("#00ffff") // Set border color
+            .padding(
+                BoxPad::uniform(1),            // External padding
+                BoxPad::from_tldr(2, 2, 1, 1), // Internal padding
+            )
+            .align(BoxAlign::Left) // Center the box in the terminal
+            .add_segment("Smell Panty", "#ffffff", BoxAlign::Center)
+            .add_segment("Printing vector", "#663399", BoxAlign::Left)
+            .width(40) // Set fixed width
+            .build();
+        my_box.display();
+    }
+
+    // deal function
+    fn deal(&mut self, num_card: usize) -> Vec<String> {
+        self.cards.split_off(self.cards.len() - num_card)
+    }
 }
 
 // #[allow(unused_variables)]
@@ -76,6 +98,17 @@ fn s2() {
     for card in &deck.cards {
         println!("{}", card);
     }
+
+    header("Dealing Cards");
+
+    let cardz = deck.deal(2);
+    print!("{} dealt cards:\n", cardz.len());
+    for card in &cardz {
+        println!("{}", card);
+    }
+
+    // After creating the instance of the deck
+    // deck.smellpanty();
 }
 
 // This is like function s2 but with boxy
