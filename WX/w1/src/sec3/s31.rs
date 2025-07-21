@@ -22,3 +22,15 @@ pub fn s31_main() {
 }
 
 // --- Sun functions ---
+
+// Bank and Account Struct
+#[derive(Debug)]
+struct Account {
+    balance: u32,
+    id: i32,
+    holder: String,
+}
+#[derive(Debug)]
+struct Bank {
+    accounts: Vec<Account>,
+}
