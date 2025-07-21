@@ -19,6 +19,7 @@ use yansi::Paint;
 // --- Main Function---
 pub fn s31_main() {
     pswg("Section3".to_string());
+    f1();
 }
 
 // --- Sun functions ---
@@ -30,7 +31,38 @@ struct Account {
     id: i32,
     holder: String,
 }
+impl Account {
+    fn new(id: i32, holder: String) -> Self {
+        Account {
+            id,
+            holder,
+            balance: 0,
+        }
+    }
+}
+
 #[derive(Debug)]
 struct Bank {
     accounts: Vec<Account>,
+}
+impl Bank {
+    fn new() -> Self {
+        Bank { accounts: vec![] }
+    }
+}
+
+fn f1_print_account(acc: Account) {
+    println!("{:#?}", acc.yellow());
+}
+
+fn f1() {
+    header("Printing Bank");
+
+    let account = Account::new(1, "Dingo".to_string());
+
+    let bank = Bank::new();
+    // print!("{:#?}", bank.green());
+
+    header("Printing Account");
+    f1_print_account(account);
 }
