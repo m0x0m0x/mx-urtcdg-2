@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Options for quagga - for compressiontime
+# Using various options for compression
 clear
 
 # Colors
@@ -21,6 +21,8 @@ hea1() {
 }
 
 # SubComs
+
+# Using Quagga , damn fast
 qua1() {
     hea1 "Quagga - Compression Test"
     DIRZ="car/reports_md/"
@@ -28,6 +30,9 @@ qua1() {
     echo -e "${YELLOW}Executing: ${NC}${co1}"
     eval "$co1"
 }
+
+# Using repomix
+
 
 # Execute 
 qua1
