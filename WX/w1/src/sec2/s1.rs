@@ -59,6 +59,22 @@ impl Deck {
         let mut rng = rng();
         self.cards.shuffle(&mut rng);
     }
+
+    fn smellpanty(&mut self) {
+        let mut my_box = Boxy::builder()
+            .box_type(BoxType::Double) // Set border style
+            .color("#00ffff") // Set border color
+            .padding(
+                BoxPad::uniform(1),            // External padding
+                BoxPad::from_tldr(2, 2, 1, 1), // Internal padding
+            )
+            .align(BoxAlign::Left) // Center the box in the terminal
+            .add_segment("Smell Panty", "#ffffff", BoxAlign::Center)
+            .add_segment("Printing vector", "#663399", BoxAlign::Left)
+            .width(40) // Set fixed width
+            .build();
+        my_box.display();
+    }
 }
 
 // #[allow(unused_variables)]
@@ -76,6 +92,9 @@ fn s2() {
     for card in &deck.cards {
         println!("{}", card);
     }
+
+    // After creating the instance of the deck
+    deck.smellpanty();
 }
 
 // This is like function s2 but with boxy
