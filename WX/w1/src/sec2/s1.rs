@@ -77,9 +77,10 @@ impl Deck {
         my_box.display();
     }
 
-    // deal function 
-    fn deal(&mut self, num_card:usize)
-
+    // deal function
+    fn deal(&mut self, num_card: usize) {
+        println!("Dealing {} cards:", num_card);
+    }
 }
 
 // #[allow(unused_variables)]
