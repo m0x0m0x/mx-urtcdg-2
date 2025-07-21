@@ -16,6 +16,7 @@
 | [`src/utilz`](./src/utilz/) | Various utils here |
 |   [`src/tez`](./src/tez/)   |       Tests        |
 |  [`src/sec2`](./src/sec2/)  |     Sec2 Work      |
+|  [`src/sec3`](./src/sec3/)  |     Sec3 Work      |
 
 # Specific Crates Being used
 
