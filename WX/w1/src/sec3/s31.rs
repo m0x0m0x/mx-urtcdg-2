@@ -66,4 +66,5 @@ fn f1() {
 
     header("Printing Account");
     f1_print_account(account);
+    f1_print_account(account);
 }
