@@ -40,7 +40,7 @@ impl Deck {
     fn new() -> Self {
         // List of suits
         let suits = ["Hearts ♥️", "Diamonds ♦️", "Spades ♠️", "Clubs ♣️"];
-        let values = ["Ace", "Jack"];
+        let values = ["Ace", "Jack", "King", "Queen"];
 
         let mut cards = vec![];
 
