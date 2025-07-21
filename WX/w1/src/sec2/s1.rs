@@ -39,7 +39,7 @@ impl Deck {
     // Method for making a deck of cards
     fn new() -> Self {
         // List of suits
-        let suits = ["Hearts ♥️", "Diamonds ♦️"];
+        let suits = ["Hearts ♥️", "Diamonds ♦️", "Spades ♠️", "Clubs ♣️"];
         let values = ["Ace", "Jack"];
 
         let mut cards = vec![];
