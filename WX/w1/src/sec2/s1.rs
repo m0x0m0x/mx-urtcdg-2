@@ -99,6 +99,11 @@ fn s2() {
         println!("{}", card);
     }
 
+    let cardz = deck.deal(5);
+    for card in &deck.cards {
+        println!("{}", card);
+    
+
     // After creating the instance of the deck
     // deck.smellpanty();
 }
