@@ -8,9 +8,10 @@
 
 # Whats
 
-|       Dir       | What                                            |
-| :-------------: | :---------------------------------------------- |
-| [`te1`](./te1/) | Test 1                                          |
-|  [`w1`](./w1/)  | Work 1 - Working from the cursa                 |
-| [`bui`](./bui/) | Downloading and testing the build from releases |
-| [`rev`](./rev/) | Reverse Engineering the binaries                |
+|        Dir        | What                                            |
+| :---------------: | :---------------------------------------------- |
+|  [`te1`](./te1/)  | Test 1                                          |
+|   [`w1`](./w1/)   | Work 1 - Working from the cursa                 |
+|  [`bui`](./bui/)  | Downloading and testing the build from releases |
+|  [`rev`](./rev/)  | Reverse Engineering the binaries                |
+| [`gcli`](./gcli/) | Gemini Cli Work                                 |
