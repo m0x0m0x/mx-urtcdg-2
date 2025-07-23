@@ -13,24 +13,18 @@ import chalk from "chalk"
 // --- Main Function Call ---
 
 function main() {
-  boxen1()
+  boxen1("smellybooty")
 }
 
 // -- Sub Function Calls
 
-// Box Function
-function boxen1() {
-  const t1 = `
-Box Test 1
-Smell Women
-  `
-  const tit = "Titlez"
-
+// Box Function - styler
+function boxen1(textz, titlez) {
   console.log(
-    boxen(chalk.yellow(t1), {
+    boxen(chalk.yellow(textz), {
       padding: 0.7,
       textAlign: "center",
-      title: tit,
+      title: titlez,
       titleAlignment: "center",
       borderColor: "green",
       borderStyle: "doubleSingle",
