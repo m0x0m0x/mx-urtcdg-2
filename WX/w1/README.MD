@@ -17,6 +17,7 @@
 |   [`src/tez`](./src/tez/)   |       Tests        |
 |  [`src/sec2`](./src/sec2/)  |     Sec2 Work      |
 |  [`src/sec3`](./src/sec3/)  |     Sec3 Work      |
+|     [`jest`](./jstest/)     |      JS Work       |
 
 # Specific Crates Being used
 
