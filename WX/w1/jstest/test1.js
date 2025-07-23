@@ -4,13 +4,16 @@
 This is for testing shell js scripts
 */
 
+// --- Imports ---
 import boxen from "boxen"
 import chalk from "chalk"
+
+// --- Variables ---
 
 // --- Main Function Call ---
 
 function main() {
-  writeText()
+  boxen1()
 }
 
 // -- Sub Function Calls
@@ -21,6 +24,7 @@ function boxen1() {
     boxen("unicorns love rainbows", {
       title: "magical",
       titleAlignment: "center",
+      bordercolor: "green",
     })
   )
 }
