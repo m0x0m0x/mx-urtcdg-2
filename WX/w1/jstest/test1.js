@@ -20,11 +20,15 @@ function main() {
 
 // Box Function
 function boxen1() {
+  const t1 = "Box Test 1"
+  const tit = "Titlez"
+
   console.log(
-    boxen("unicorns love rainbows", {
-      title: "magical",
+    boxen(t1, {
+      title: tit,
       titleAlignment: "center",
-      bordercolor: "green",
+      borderColor: "green",
+      borderStyle: "doubleSingle",
     })
   )
 }
