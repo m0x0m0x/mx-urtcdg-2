@@ -6,4 +6,10 @@ This is for testing shell js scripts
 
 import chalk from "chalk"
 
-console.log(chalk.blue("Hello world!"))
+
+// Printing text function 
+
+const function writeText() {
+    console.log(chalk.blue("Hello world!"))
+}
+
