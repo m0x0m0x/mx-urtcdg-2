@@ -23,4 +23,10 @@ function title(textz, titlez) {
   )
 }
 
+function s3main() {
+  title("Section 3 - Chapter 20", "JS Booty Smell Test")
+  console.log(chalk.blue("Testing JS Booty Smell..."))
+}
+s3main()
+
 // -- Sub Function called in Main ---
