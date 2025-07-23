@@ -24,7 +24,8 @@ function boxen1() {
   const tit = "Titlez"
 
   console.log(
-    boxen(t1, {
+    boxen(chalk.yellow(t1), {
+      padding: 0.7,
       title: tit,
       titleAlignment: "center",
       borderColor: "green",
