@@ -1,3 +1,5 @@
 #!/usr/bin/env bun
 
-console.log("SmellBooty")
+import chalk from "chalk"
+
+console.log(chalk.blue("Hello world!"))
