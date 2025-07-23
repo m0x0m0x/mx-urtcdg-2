@@ -20,12 +20,16 @@ function main() {
 
 // Box Function
 function boxen1() {
-  const t1 = "Box Test 1"
+  const t1 = `
+Box Test 1
+Smell Women
+  `
   const tit = "Titlez"
 
   console.log(
     boxen(chalk.yellow(t1), {
       padding: 0.7,
+      textAlign: "center",
       title: tit,
       titleAlignment: "center",
       borderColor: "green",
