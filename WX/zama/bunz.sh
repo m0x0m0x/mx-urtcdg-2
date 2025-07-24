@@ -85,17 +85,19 @@ bun_i() {
     fi
 
     # Commands to execute
-    CO1="bun i $name_of_project"
+    CO1="mkdir $name_of_project && cd $name_of_project"
+    CO1="bun i --yes"
     
     # Show Commands
     echo -e ""
     echo -e "${GREEN}---Commands to execute:---"
     echo -e ">$CO1"
+    echo -e ">$CO2"
     echo -e "Executing....${NC}"
 
     # Execution Commands
     eval "$CO1"
-    
+    eval "$CO2"
 }
 
 
