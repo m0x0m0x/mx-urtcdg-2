@@ -76,7 +76,7 @@ bun_ex() {
 # Testing zama install with bun 
 zam_in() {
     hea1 "Make Bun Executable"
-    co1="bun build --compile --minify --sourcemap --bytecode ${TARGET} --outfile ${TARGET}_bun"
+    co1="bun install @zama-fhe/relayer-sdk"
     echo -e "${GREEN}Executing: $co1${NC}"
     eval "$co1"
 }
