@@ -85,8 +85,8 @@ bun_i() {
     fi
 
     # Commands to execute
-    CO1="mkdir $name_of_project && cd $name_of_project"
-    CO1="bun i --yes"
+    CO1="mkdir -p $name_of_project && cd $name_of_project"
+    CO1="bun init --yes"
     
     # Show Commands
     echo -e ""
