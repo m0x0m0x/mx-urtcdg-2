@@ -73,6 +73,32 @@ bun_ex() {
     eval "$co1"
 }
 
+# bun init 
+bun_i() {
+    hea1 "Init a new bun project"
+    # Get name of Project
+    echo -e "Enter the name of the project: "
+    read name_of_project
+    if [ -z "$name_of_project" ]; then
+        echo -e "${RED}BASTARD ! Project name cannot be empty${NC}"
+        exit 1
+    fi
+
+    # Commands to execute
+    CO1="bun i $name_of_project"
+    
+    # Show Commands
+    echo -e ""
+    echo -e "${GREEN}---Commands to execute:---"
+    echo -e ">$CO1"
+    echo -e "Executing....${NC}"
+
+    # Execution Commands
+    eval "$CO1"
+    
+}
+
+
 # Testing zama install with bun 
 zam_in() {
     hea1 "Make Bun Executable"
