@@ -8,5 +8,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@zama-fhe/relayer-sdk": "^0.1.2"
   }
 }
