@@ -15,3 +15,4 @@
 |  [`bui`](./bui/)  | Downloading and testing the build from releases |
 |  [`rev`](./rev/)  | Reverse Engineering the binaries                |
 | [`gcli`](./gcli/) | Gemini Cli Work                                 |
+| [`zama`](./zama/) | Test Zama FHE                                   |
