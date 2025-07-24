@@ -111,4 +111,5 @@ zam_in() {
 # Execution
 # cargo_new
 # cargo_remove_target
-bun_ex
+# bun_ex
+bun_i
